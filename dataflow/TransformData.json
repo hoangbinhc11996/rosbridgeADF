@@ -26,6 +26,13 @@
 						"type": "DatasetReference"
 					},
 					"name": "ReadyToBuildOutput"
+				},
+				{
+					"dataset": {
+						"referenceName": "pivotStateBedOutput",
+						"type": "DatasetReference"
+					},
+					"name": "pivotBedOutput"
 				}
 			],
 			"transformations": [
@@ -34,6 +41,9 @@
 				},
 				{
 					"name": "split1"
+				},
+				{
+					"name": "pivot1"
 				}
 			],
 			"scriptLines": [
@@ -74,6 +84,11 @@
 				"select1 split(status=='for_sale',",
 				"     status=='ready_to_build',",
 				"     disjoint: false) ~> split1@(dataForSale, ReadyToBuild, all)",
+				"select1 pivot(groupBy(bed),",
+				"     pivotBy(state),",
+				"     avg = avg(toInteger(price)),",
+				"     columnNaming: '$N$V',",
+				"     lateral: false) ~> pivot1",
 				"split1@dataForSale sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     input(",
@@ -107,7 +122,24 @@
 				"          Column_11 as string",
 				"     ),",
 				"     skipDuplicateMapInputs: true,",
-				"     skipDuplicateMapOutputs: true) ~> ReadyToBuildOutput"
+				"     skipDuplicateMapOutputs: true) ~> ReadyToBuildOutput",
+				"pivot1 sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     input(",
+				"          Column_1 as string,",
+				"          Column_2 as string,",
+				"          Column_3 as string,",
+				"          Column_4 as string,",
+				"          Column_5 as string,",
+				"          Column_6 as string,",
+				"          Column_7 as string,",
+				"          Column_8 as string,",
+				"          Column_9 as string,",
+				"          Column_10 as string,",
+				"          Column_11 as string",
+				"     ),",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> pivotBedOutput"
 			]
 		}
 	}
