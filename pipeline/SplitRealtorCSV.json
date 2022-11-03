@@ -1,9 +1,9 @@
 {
-	"name": "pipeline1",
+	"name": "SplitRealtorCSV",
 	"properties": {
 		"activities": [
 			{
-				"name": "Data flow2",
+				"name": "SplitRealtorCSV",
 				"type": "ExecuteDataFlow",
 				"dependsOn": [],
 				"policy": {
@@ -16,7 +16,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"dataflow": {
-						"referenceName": "aggregateTest",
+						"referenceName": "SplitRealtorCSV",
 						"type": "DataFlowReference"
 					},
 					"compute": {
@@ -27,8 +27,9 @@
 				}
 			}
 		],
-		"annotations": [],
-		"lastPublishTime": "2022-10-13T04:14:54Z"
-	},
-	"type": "Microsoft.DataFactory/factories/pipelines"
+		"folder": {
+			"name": "test"
+		},
+		"annotations": []
+	}
 }

@@ -1,19 +1,22 @@
 {
-	"name": "Json1",
+	"name": "RealtorSplitedCSVOutput",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "rosbagstorageLinkedService",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
-		"type": "Json",
+		"type": "DelimitedText",
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
+				"folderPath": "realtorData/patitioned",
 				"container": "bags-ouput"
-			}
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"quoteChar": "\""
 		},
-		"schema": {}
-	},
-	"type": "Microsoft.DataFactory/factories/datasets"
+		"schema": []
+	}
 }

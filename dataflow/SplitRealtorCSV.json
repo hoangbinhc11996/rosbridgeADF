@@ -1,0 +1,71 @@
+{
+	"name": "SplitRealtorCSV",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "realtorCSVDataset",
+						"type": "DatasetReference"
+					},
+					"name": "RealtorCSV"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "RealtorSplitedCSVOutput",
+						"type": "DatasetReference"
+					},
+					"name": "DataLake"
+				}
+			],
+			"transformations": [
+				{
+					"name": "RoundRobinPartition"
+				}
+			],
+			"scriptLines": [
+				"source(output(",
+				"          status as string,",
+				"          price as string,",
+				"          bed as string,",
+				"          bath as string,",
+				"          acre_lot as string,",
+				"          full_address as string,",
+				"          street as string,",
+				"          city as string,",
+				"          state as string,",
+				"          zip_code as string,",
+				"          house_size as string,",
+				"          sold_date as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> RealtorCSV",
+				"RealtorCSV select(mapColumn(",
+				"          status,",
+				"          price,",
+				"          bed,",
+				"          bath,",
+				"          acre_lot,",
+				"          full_address,",
+				"          street,",
+				"          city,",
+				"          state,",
+				"          zip_code,",
+				"          house_size,",
+				"          sold_date",
+				"     ),",
+				"     partitionBy('roundRobin', 100),",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> RoundRobinPartition",
+				"RoundRobinPartition sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> DataLake"
+			]
+		}
+	}
+}

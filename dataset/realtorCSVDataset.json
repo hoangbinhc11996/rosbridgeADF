@@ -1,9 +1,12 @@
 {
-	"name": "SourceDataset_0w1",
+	"name": "realtorCSVDataset",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "rosbagstorageLinkedService",
 			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "test/csv"
 		},
 		"annotations": [],
 		"type": "DelimitedText",
@@ -68,6 +71,5 @@
 				"type": "String"
 			}
 		]
-	},
-	"type": "Microsoft.DataFactory/factories/datasets"
+	}
 }
