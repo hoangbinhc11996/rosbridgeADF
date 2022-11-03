@@ -19,6 +19,9 @@
 						"type": "DatasetReference"
 					},
 					"name": "forSaleOutput"
+				},
+				{
+					"name": "ReadyToBuildOutput"
 				}
 			],
 			"transformations": [
@@ -83,7 +86,11 @@
 				"          Column_11 as string",
 				"     ),",
 				"     skipDuplicateMapInputs: true,",
-				"     skipDuplicateMapOutputs: true) ~> forSaleOutput"
+				"     skipDuplicateMapOutputs: true) ~> forSaleOutput",
+				"split1@ReadyToBuild sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> ReadyToBuildOutput"
 			]
 		}
 	}
