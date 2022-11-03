@@ -20,7 +20,13 @@
 						"type": "DataFlowReference",
 						"datasetParameters": {
 							"forSaleOutput": {
-								"filename": "transform/readyforsale/data.csv"
+								"filename": "split/forsale/data.csv"
+							},
+							"ReadyToBuildOutput": {
+								"filename": "split/readytobuild/data.csv"
+							},
+							"pivotBedOutput": {
+								"filename": "nomalized/bedstate/data.csv"
 							}
 						}
 					},
