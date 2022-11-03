@@ -23,18 +23,51 @@
 		},
 		"schema": [
 			{
+				"name": "status",
 				"type": "String"
 			},
 			{
+				"name": "price",
 				"type": "String"
 			},
 			{
+				"name": "bed",
 				"type": "String"
 			},
 			{
+				"name": "bath",
 				"type": "String"
 			},
 			{
+				"name": "acre_lot",
+				"type": "String"
+			},
+			{
+				"name": "full_address",
+				"type": "String"
+			},
+			{
+				"name": "street",
+				"type": "String"
+			},
+			{
+				"name": "city",
+				"type": "String"
+			},
+			{
+				"name": "state",
+				"type": "String"
+			},
+			{
+				"name": "zip_code",
+				"type": "String"
+			},
+			{
+				"name": "house_size",
+				"type": "String"
+			},
+			{
+				"name": "sold_date",
 				"type": "String"
 			}
 		]
