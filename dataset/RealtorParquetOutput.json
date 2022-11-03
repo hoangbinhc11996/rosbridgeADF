@@ -1,0 +1,31 @@
+{
+	"name": "RealtorParquetOutput",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "rosbagstorageLinkedService",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"outputFile": {
+				"type": "String"
+			}
+		},
+		"annotations": [
+			"outputFile"
+		],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": {
+					"value": "@dataset().outputFile",
+					"type": "Expression"
+				},
+				"folderPath": "realtorData/parquetPartitioned",
+				"container": "bags-ouput"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	}
+}
