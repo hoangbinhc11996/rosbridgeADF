@@ -1,0 +1,9 @@
+{
+	"name": "rosbridgedatafactoryworkspace",
+	"location": "eastasia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "db36a028-a51d-4a2f-9b4c-994767163ed9",
+		"tenantId": "0a6802b7-fdfd-4f78-94b7-7eff8e6e3966"
+	}
+}

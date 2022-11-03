@@ -1,0 +1,25 @@
+{
+	"name": "FareAverage",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "rosbagstorageLinkedService",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "outdata",
+				"folderPath": "piplineout",
+				"container": "bags-ouput"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

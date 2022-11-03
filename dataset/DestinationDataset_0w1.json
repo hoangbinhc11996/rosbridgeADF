@@ -1,0 +1,80 @@
+{
+	"name": "DestinationDataset_0w1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabaseLinkedService",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "id",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "status",
+				"type": "varchar"
+			},
+			{
+				"name": "price",
+				"type": "decimal",
+				"precision": 20,
+				"scale": 2
+			},
+			{
+				"name": "bed",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "bath",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "acre_lot",
+				"type": "decimal",
+				"precision": 20,
+				"scale": 2
+			},
+			{
+				"name": "full_address",
+				"type": "varchar"
+			},
+			{
+				"name": "street",
+				"type": "varchar"
+			},
+			{
+				"name": "city",
+				"type": "varchar"
+			},
+			{
+				"name": "state",
+				"type": "varchar"
+			},
+			{
+				"name": "zip_code",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "house_size",
+				"type": "decimal",
+				"precision": 20,
+				"scale": 2
+			},
+			{
+				"name": "sold_date",
+				"type": "date"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "RealEstate"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

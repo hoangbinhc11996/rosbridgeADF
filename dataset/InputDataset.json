@@ -1,0 +1,20 @@
+{
+	"name": "InputDataset",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureStorageLinkedService",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "VF35_01_20220326_152344@20220326_152444810077.idx",
+				"folderPath": "20220326_152344_VF35_01@20220326_152444810077",
+				"container": "recordings"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

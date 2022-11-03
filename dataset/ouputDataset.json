@@ -1,0 +1,18 @@
+{
+	"name": "ouputDataset",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "rosbagstorageLinkedService",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"container": "bags-ouput"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

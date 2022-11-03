@@ -1,0 +1,45 @@
+{
+	"name": "ASATableDataset",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabaseLinkedService",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "tripID",
+				"type": "varchar"
+			},
+			{
+				"name": "createdAt",
+				"type": "datetime2",
+				"scale": 7
+			},
+			{
+				"name": "startLocation",
+				"type": "varchar"
+			},
+			{
+				"name": "endLocation",
+				"type": "varchar"
+			},
+			{
+				"name": "distance",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "FARE",
+				"type": "int",
+				"precision": 10
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "ASATable"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

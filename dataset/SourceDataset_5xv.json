@@ -1,0 +1,46 @@
+{
+	"name": "SourceDataset_5xv",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "rosbagstorageLinkedService",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "eng-viet.csv",
+				"folderPath": "inputdata",
+				"container": "bags-ouput"
+			},
+			"columnDelimiter": "\t",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "id",
+				"type": "String"
+			},
+			{
+				"name": "text",
+				"type": "String"
+			},
+			{
+				"name": "audio_url",
+				"type": "String"
+			},
+			{
+				"name": "translate_id",
+				"type": "String"
+			},
+			{
+				"name": "translate_text",
+				"type": "String"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
