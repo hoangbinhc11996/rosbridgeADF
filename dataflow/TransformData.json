@@ -6,7 +6,7 @@
 			"sources": [
 				{
 					"dataset": {
-						"referenceName": "RealtorParquetInput",
+						"referenceName": "RealtorParquetInput0",
 						"type": "DatasetReference"
 					},
 					"name": "source1"
@@ -30,9 +30,6 @@
 				}
 			],
 			"scriptLines": [
-				"parameters{",
-				"     inFile as string",
-				"}",
 				"source(output(",
 				"          Prop_0 as string,",
 				"          Prop_1 as string,",
