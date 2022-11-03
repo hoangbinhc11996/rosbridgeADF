@@ -5,10 +5,6 @@
 		"typeProperties": {
 			"sources": [
 				{
-					"dataset": {
-						"referenceName": "ASATableDataset",
-						"type": "DatasetReference"
-					},
 					"name": "ASATable"
 				}
 			],
@@ -36,9 +32,7 @@
 				"          FARE as integer",
 				"     ),",
 				"     allowSchemaDrift: true,",
-				"     validateSchema: false,",
-				"     isolationLevel: 'READ_UNCOMMITTED',",
-				"     format: 'table') ~> ASATable",
+				"     validateSchema: false) ~> ASATable",
 				"ASATable aggregate(FARE = avg(toInteger(FARE))) ~> aggregateFare",
 				"ASATable sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
