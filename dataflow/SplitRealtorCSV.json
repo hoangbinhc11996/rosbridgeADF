@@ -1,5 +1,5 @@
 {
-	"name": "RealtorCSV",
+	"name": "SplitRealtorCSV",
 	"properties": {
 		"type": "MappingDataFlow",
 		"typeProperties": {
