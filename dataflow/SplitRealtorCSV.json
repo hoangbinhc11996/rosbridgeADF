@@ -9,17 +9,21 @@
 						"referenceName": "realtorCSVDataset",
 						"type": "DatasetReference"
 					},
-					"name": "source1"
+					"name": "RealtorCSV"
 				}
 			],
 			"sinks": [
 				{
-					"name": "sink1"
+					"dataset": {
+						"referenceName": "RealtorSplitedCSVOutput",
+						"type": "DatasetReference"
+					},
+					"name": "DataLake"
 				}
 			],
 			"transformations": [
 				{
-					"name": "select1"
+					"name": "RoundRobinPartition"
 				}
 			],
 			"scriptLines": [
@@ -39,8 +43,8 @@
 				"     ),",
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
-				"     ignoreNoFilesFound: false) ~> source1",
-				"source1 select(mapColumn(",
+				"     ignoreNoFilesFound: false) ~> RealtorCSV",
+				"RealtorCSV select(mapColumn(",
 				"          status,",
 				"          price,",
 				"          bed,",
@@ -56,11 +60,11 @@
 				"     ),",
 				"     partitionBy('roundRobin', 100),",
 				"     skipDuplicateMapInputs: true,",
-				"     skipDuplicateMapOutputs: true) ~> select1",
-				"select1 sink(allowSchemaDrift: true,",
+				"     skipDuplicateMapOutputs: true) ~> RoundRobinPartition",
+				"RoundRobinPartition sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     skipDuplicateMapInputs: true,",
-				"     skipDuplicateMapOutputs: true) ~> sink1"
+				"     skipDuplicateMapOutputs: true) ~> DataLake"
 			]
 		}
 	}
