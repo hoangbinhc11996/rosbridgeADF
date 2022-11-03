@@ -1,0 +1,25 @@
+{
+	"name": "parquetPatitionedOutput",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "rosbagstorageLinkedService",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"name": {
+				"type": "String"
+			}
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"folderPath": "realtorData/parquetPartitioned",
+				"container": "bags-ouput"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	}
+}
