@@ -10,6 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
+				"fileName": "part-00000-3baa6708-1d74-49c1-810d-206b2ed9d326-c000.csv.parquet",
 				"folderPath": "realtorData/parquetPartitioned",
 				"container": "bags-ouput"
 			},
