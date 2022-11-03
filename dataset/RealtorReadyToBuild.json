@@ -10,6 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
+				"fileName": "readytobuild.csv",
 				"folderPath": "realtorData/transform",
 				"container": "bags-ouput"
 			},
