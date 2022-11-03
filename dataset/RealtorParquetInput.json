@@ -5,20 +5,11 @@
 			"referenceName": "rosbagstorageLinkedService",
 			"type": "LinkedServiceReference"
 		},
-		"parameters": {
-			"filename": {
-				"type": "String"
-			}
-		},
 		"annotations": [],
 		"type": "Parquet",
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": {
-					"value": "@dataset().filename",
-					"type": "Expression"
-				},
 				"folderPath": "realtorData/parquetPartitioned",
 				"container": "bags-ouput"
 			},
