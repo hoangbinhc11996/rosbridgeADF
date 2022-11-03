@@ -1,9 +1,9 @@
 {
-	"name": "pipeline2",
+	"name": "helloDatabricks",
 	"properties": {
 		"activities": [
 			{
-				"name": "Notebook1",
+				"name": "helloworld",
 				"type": "DatabricksNotebook",
 				"dependsOn": [],
 				"policy": {
