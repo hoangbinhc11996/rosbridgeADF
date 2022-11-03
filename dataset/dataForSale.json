@@ -5,13 +5,18 @@
 			"referenceName": "rosbagstorageLinkedService",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"filename": {
+				"type": "String"
+			}
+		},
 		"annotations": [],
 		"type": "DelimitedText",
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
 				"fileName": {
-					"value": "transform/for_sale.csv",
+					"value": "@dataset().filename",
 					"type": "Expression"
 				},
 				"folderPath": "realtorData",
