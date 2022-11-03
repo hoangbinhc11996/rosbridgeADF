@@ -19,7 +19,7 @@
 					"value": "@dataset().filename",
 					"type": "Expression"
 				},
-				"folderPath": "realtorData",
+				"folderPath": "realtorData/transform/dataforsale",
 				"container": "bags-ouput"
 			},
 			"columnDelimiter": ",",
