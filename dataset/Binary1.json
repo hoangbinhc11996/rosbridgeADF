@@ -10,7 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"folderPath": "VN/VF35/VF35_VN_165/20221004/full_data/20221005_022503_VF35_VN_165@20221005_024503926659",
+				"folderPath": "VN/VF35",
 				"container": "recordings"
 			}
 		}
